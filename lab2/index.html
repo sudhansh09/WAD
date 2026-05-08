@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <div>
+        <h3>User Registration</h3>
+        <form id="userForm">
+            Name: <input type="text" id="name" required>
+            Email: <input type="email" id="email" required>
+            Password: <input type="password" id="password" required>
+            <button type="submit" >Register</button>
+        </form>
+        <a href="./list.html">View Registered User</a>
+    </div>
+
+    <script>
+        // Save user directly to localStorage (no dummy XHR)
+        document.getElementById("userForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+
+            // Basic validation
+            if (!name || !email || !password) return;
+
+            let userData = { name: name, email: email, password: password };
+
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            users.push(userData);
+            localStorage.setItem("users", JSON.stringify(users));
+
+           let xhr = new XMLHttpRequest();
+           xhr.open("POST", "https://jsonplaceholder.typicode.com/posts", true);
+           xhr.setRequestHeader("Content-Type", "application/json");
+
+           xhr.onreadystatechange = function () {
+            if(xhr.readyState === 4 && xhr.status === 201){
+                alert("User registered successfully!");
+                window.location.href = './list.html';
+            }
+           }
+           xhr.send(JSON.stringify(userData));
+        });
+    </script>
+</body>
+</html>
