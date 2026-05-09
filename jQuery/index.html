@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>jQuery Mobile Website</title>
+
+    <!-- jQuery Mobile CSS -->
+    <link rel="stylesheet"
+    href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!-- jQuery Mobile JS -->
+    <script
+    src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+    </script>
+
+    <style>
+        body{
+            font-family: Arial;
+        }
+
+        .custom-box{
+            padding:20px;
+            background:#f4f4f4;
+            border-radius:10px;
+            text-align:center;
+            margin-top:20px;
+        }
+
+        img{
+            width:100%;
+            border-radius:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HOME PAGE -->
+<div data-role="page" id="home">
+
+    <!-- Header -->
+    <div data-role="header" data-theme="b" data-position="fixed">
+        <h1>My Mobile Website</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div role="main" class="ui-content">
+
+        <div class="custom-box">
+
+            <h2>Welcome</h2>
+
+            <p>
+                This is a simple mobile website using jQuery Mobile.
+            </p>
+
+            <img src="https://picsum.photos/500/250" alt="Mobile Website">
+
+            <a href="#about"
+               class="ui-btn ui-btn-b ui-corner-all ui-shadow">
+               About Us
+            </a>
+
+            <a href="#contact"
+               class="ui-btn ui-btn-a ui-corner-all ui-shadow">
+               Contact
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div data-role="footer" data-theme="b" data-position="fixed">
+        <h4>© 2026 Mobile Website</h4>
+    </div>
+
+</div>
+
+<!-- ABOUT PAGE -->
+<div data-role="page" id="about">
+
+    <div data-role="header" data-theme="b">
+        <a href="#home" data-icon="back">Back</a>
+        <h1>About Us</h1>
+    </div>
+
+    <div role="main" class="ui-content">
+
+        <h2>About Company</h2>
+
+        <p>
+            We create responsive and mobile-friendly web applications
+            using jQuery Mobile.
+        </p>
+
+        <ul data-role="listview" data-inset="true">
+
+            <li>Responsive Design</li>
+            <li>Fast Loading</li>
+            <li>User Friendly Interface</li>
+
+        </ul>
+
+    </div>
+
+    <div data-role="footer" data-position="fixed" data-theme="b">
+        <h4>About Page</h4>
+    </div>
+
+</div>
+
+<!-- CONTACT PAGE -->
+<div data-role="page" id="contact">
+
+    <div data-role="header" data-theme="b">
+        <a href="#home" data-icon="back">Back</a>
+        <h1>Contact Us</h1>
+    </div>
+
+    <div role="main" class="ui-content">
+
+        <form>
+
+            <label>Name:</label>
+            <input type="text" placeholder="Enter your name">
+
+            <label>Email:</label>
+            <input type="email" placeholder="Enter your email">
+
+            <label>Message:</label>
+            <textarea placeholder="Enter message"></textarea>
+
+            <button class="ui-btn ui-btn-b">
+                Submit
+            </button>
+
+        </form>
+
+    </div>
+
+    <div data-role="footer" data-position="fixed" data-theme="b">
+        <h4>Contact Page</h4>
+    </div>
+
+</div>
+
+</body>
+</html>
